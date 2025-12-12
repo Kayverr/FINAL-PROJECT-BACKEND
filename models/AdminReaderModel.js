@@ -79,16 +79,14 @@ export const login = async (username, password) => {
     };
 };
 
-export 
+export const getUser = async (id) => {
+    if (isNaN(parseInt(id))) {
+        throw new Error("Invalid id");
+    }
 
-// export const getUser = async (id) => {
-//     if (isNaN(parseInt(id))) {
-//         throw new Error("Invalid id");
-//     }
+    const [rows] = await pool.query("SELECT * FROM admin_reader WHERE id = ?", [id]);
 
-//     const [rows] = await pool.query("SELECT * FROM admin_reader WHERE id = ?", [id]);
+    if (rows.length === 0) throw new Error("User not found");
 
-//     if (rows.length === 0) throw new Error("User not found");
-
-//     return rows[0];
-// };
+    return rows[0];
+};
