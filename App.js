@@ -2,9 +2,10 @@ import express from 'express';
 import 'dotenv/config.js';
 import cors from 'cors';
 import dotenv from "dotenv";
-import userRoutes from './routes/UserRoutes.js'
-import adminreaderRoutes from './routes/AdminReaderRoutes.js'
+import userRoutes from './routes/UserRoutes.js';
+import adminreaderRoutes from './routes/AdminReaderRoutes.js';
 import consumptionRoutes from './routes/ConsumptionRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
 
 const app = express();
 dotenv.config();
@@ -30,3 +31,5 @@ app.use('/user', userRoutes);
 app.use('/adminreader', adminreaderRoutes);
 
 app.use('/consumption', consumptionRoutes); 
+
+app.use('/payment', paymentRoutes);
