@@ -197,5 +197,12 @@ export const getUserName = async (user_id) => {
 //   return await getConsumptionById(id);
 // };
 
-
-};
+// // DELETE CONSUMPTION
+// export const deleteConsumption = async (id) => {
+//   const [result] = await pool.query(
+//     "DELETE FROM water_consumption WHERE id = ?",
+//     [id]
+//   );
+//   if (result.affectedRows === 0) throw new Error("Record not found.");
+//   return true;
+// };
